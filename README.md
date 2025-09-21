@@ -1,49 +1,46 @@
-# DIO - Trilha .NET - API e Entity Framework
-www.dio.me
+📌 DIO - Trilha .NET - API e Entity Framework
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de API e Entity Framework, da trilha .NET da DIO.
+Este repositório contém a solução para o desafio de projeto do módulo de API e Entity Framework da DIO (Digital Innovation One)
+.
 
-## Contexto
-Você precisa construir um sistema gerenciador de tarefas, onde você poderá cadastrar uma lista de tarefas que permitirá organizar melhor a sua rotina.
+🚀 Desafio de Projeto
 
-Essa lista de tarefas precisa ter um CRUD, ou seja, deverá permitir a você obter os registros, criar, salvar e deletar esses registros.
+O objetivo foi construir um sistema gerenciador de tarefas, permitindo o cadastro de uma lista de tarefas para organizar melhor a rotina do usuário.
 
-A sua aplicação deverá ser do tipo Web API ou MVC, fique a vontade para implementar a solução que achar mais adequado.
+A aplicação foi desenvolvida em .NET 6 Web API utilizando o Entity Framework Core para persistência de dados.
 
-A sua classe principal, a classe de tarefa, deve ser a seguinte:
+📖 Funcionalidades
 
-![Diagrama da classe Tarefa](diagrama.png)
+O sistema permite realizar as operações básicas de um CRUD sobre tarefas:
 
-Não se esqueça de gerar a sua migration para atualização no banco de dados.
+✅ Criar uma tarefa
 
-## Métodos esperados
-É esperado que você crie o seus métodos conforme a seguir:
+✅ Obter uma tarefa pelo ID
 
+✅ Atualizar uma tarefa
 
-**Swagger**
+✅ Deletar uma tarefa
 
+✅ Listar todas as tarefas
 
-![Métodos Swagger](swagger.png)
+✅ Consultar por Título
 
+✅ Consultar por Data
 
-**Endpoints**
+✅ Consultar por Status
 
+🛠️ Tecnologias Utilizadas
 
-| Verbo  | Endpoint                | Parâmetro | Body          |
-|--------|-------------------------|-----------|---------------|
-| GET    | /Tarefa/{id}            | id        | N/A           |
-| PUT    | /Tarefa/{id}            | id        | Schema Tarefa |
-| DELETE | /Tarefa/{id}            | id        | N/A           |
-| GET    | /Tarefa/ObterTodos      | N/A       | N/A           |
-| GET    | /Tarefa/ObterPorTitulo  | titulo    | N/A           |
-| GET    | /Tarefa/ObterPorData    | data      | N/A           |
-| GET    | /Tarefa/ObterPorStatus  | status    | N/A           |
-| POST   | /Tarefa                 | N/A       | Schema Tarefa |
+.NET 6
 
-Esse é o schema (model) de Tarefa, utilizado para passar para os métodos que exigirem
+Entity Framework Core
 
-```json
+Swagger
+ (para documentação e testes de endpoints)
+
+Banco de dados SQL Server LocalDB (padrão, mas pode ser alterado no appsettings.json)
+
+🗂️ Estrutura da Tarefa (Model)
 {
   "id": 0,
   "titulo": "string",
@@ -51,8 +48,60 @@ Esse é o schema (model) de Tarefa, utilizado para passar para os métodos que e
   "data": "2022-06-08T01:31:07.056Z",
   "status": "Pendente"
 }
-```
+
+🔗 Endpoints Disponíveis
+Verbo	Endpoint	Parâmetro	Body
+GET	/Tarefa/{id}	id	N/A
+PUT	/Tarefa/{id}	id	Schema Tarefa
+DELETE	/Tarefa/{id}	id	N/A
+GET	/Tarefa/ObterTodos	N/A	N/A
+GET	/Tarefa/ObterPorTitulo	titulo	N/A
+GET	/Tarefa/ObterPorData	data	N/A
+GET	/Tarefa/ObterPorStatus	status	N/A
+POST	/Tarefa	N/A	Schema Tarefa
+📌 Como Executar o Projeto
+
+Clone este repositório:
+
+git clone https://github.com/seu-usuario/dio-trilha-dotnet-api-ef.git
 
 
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+Acesse a pasta do projeto:
+
+cd dio-trilha-dotnet-api-ef
+
+
+Configure o banco de dados no arquivo appsettings.json (se necessário).
+
+Execute as migrations para atualizar o banco de dados:
+
+dotnet ef database update
+
+
+Execute o projeto:
+
+dotnet run
+
+
+Acesse a documentação Swagger em:
+👉 https://localhost:5001/swagger
+
+📷 Imagens de Referência
+
+Estrutura da classe Tarefa:
+
+
+Documentação no Swagger:
+
+
+📚 Aprendizados
+
+Uso do Entity Framework Core para persistência.
+
+Criação de endpoints REST com .NET 6.
+
+Documentação automática com Swagger.
+
+Implementação de consultas personalizadas.
+
+✍️ Desenvolvido como parte da Trilha .NET - DIO.
